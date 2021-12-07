@@ -8,7 +8,7 @@
 //get data domisili
   $sql_d = "select `domisili` from `domisili` where `kode_domisili` = '$kode_domisili'";
   $query_d = mysqli_query($koneksi,$sql_d); while($data_d = mysqli_fetch_row($query_d)){
-  $domisili= $data_d[0];
+    $domisili= $data_d[0];
   }
 }
 ?>
@@ -33,6 +33,8 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             <h3><i class="fas fa-edit"></i> Edit Domisili</h3>
+            <h2><?php echo var_dump($kode_domisili); ?></h2>
+            <pre><?php echo var_dump($domisili); ?></pre>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">

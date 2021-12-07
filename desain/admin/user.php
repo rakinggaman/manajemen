@@ -35,7 +35,7 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
     <section class="content">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title" style="margin-top:5px;"><i class="fas fa-list-ul"></i> Tipe akun</h3>
+                <h3 class="card-title" style="margin-top:5px;"><i class="fas fa-list-ul"></i> Akun</h3>
                 <div class="card-tools">
                   <a href="tambah_user.php" class="btn btn-sm btn-info float-right"><i class="fas fa-plus"></i> Tambah akun</a>
                 </div>
@@ -70,7 +70,7 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
                 <table class="table table-bordered">
                   <thead>                  
                     <tr>
-                    <th width="5%">No</th>
+                        <th width="5%">No</th>
                         <th width="25%">Nama</th>
                         <th width="20%">Email</th>
                         <th width="20%">Username</th>
@@ -92,33 +92,31 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
                       $query_h = mysqli_query($koneksi,$sql_h);
                       $no=1;
                       while($data_h = mysqli_fetch_row($query_h)){
-                        $nama = $data_h[0];
-                        $email = $data_h[1];
-                        $username = $data_h[2];
-                        $level = $data_h[3];
-                        $id_user = $data_h[4];
+                        $id = $data_h[0];
+                        $nama = $data_h[1];
+                        $email = $data_h[2];
+                        $username = $data_h[3];
+                        $level = $data_h[4];
                         ?>
-                  	<tr>
-                  	<td><?php echo $no;?></td>
+                  	
+                  	<td><?php echo $id;?></td>
                   	<td><?php echo $nama;?></td>
                     <td><?php echo $email;?></td>
                     <td><?php echo $username;?></td>
                     <td><?php echo $level;?></td>
                   	<td>
-                  	<a href="edit_produk.php?data=<?php echo $kode_produk;?>"
-                  	class="btn btn-xs btn-info">
-                  	<i class="fas fa-edit"></i> Edit</a>
-                  	<a href="javascript:if(confirm('Anda yakin ingin menghapus data?
-                  <?php echo $nama; ?>?'))	window.location.href = 'user.php?aksi=hapus&data=<?php echo
-                    $id_user;?>'"
-                  	class="btn btn-xs btn-warning"><i class="fas fa-trash"></i> Hapus 	</a>
+                      <a href="edit_produk.php?data=<?php echo $kode_produk;?>"
+                      class="btn btn-xs btn-info">
+                      <i class="fas fa-edit"></i> Edit</a>
+                      <a href="javascript:if(confirm('Anda yakin ingin menghapus data?
+                        <?php echo $nama; ?>?'))	window.location.href = 'user.php?aksi=hapus&data=<?php echo
+                      $id_user;?>'"
+                      class="btn btn-xs btn-warning"><i class="fas fa-trash"></i> Hapus 	</a>
                   	</td>
                    </tr>
                    <?php 
                     $no++; 
                      }?>
-
-                   
                   </tbody>
                 </table>
               </div>
