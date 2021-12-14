@@ -1,7 +1,8 @@
-	<?php
-	session_start();
+<?php
+
 	include('../koneksi/koneksi.php');
-  if(isset($_SESSION['id_user']));
+    session_start();
+    if(isset($_SESSION['id_user']));
 	$id_user = $_SESSION['id_user'];
 	//get profil
 	$sql = "select `nama`, `email` from `akun`
@@ -27,20 +28,7 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h3><i class="fas fa-user-tie"></i> Dashboard</h3>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item active"> Dashboard</li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
+   <br><!-- /.container-fluid -->
     </section>
 
     <!-- Main content -->
@@ -48,26 +36,26 @@
             <div class="card">
               <div class="card-header">
                 <div class="card-tools">
-                  <a href="edit_profil.php" class="btn btn-sm btn-info float-right"><i class="fas fa-edit"></i> Edit Dashboard</a>
+                  <a href="edit_profil.php" class="btn btn-sm btn-info float-right"><i class="fas fa-edit"></i> Edit Profil</a>
                 </div>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <div class="col-sm-12">
-                    <div class="alert alert-success" role="alert">Data Berhasil Diubah</div>
+                    
                 </div>
                 <table class="table table-bordered">
                     <tbody>  
                       <tr>
-                        <td colspan="2"><i class="fas fa-user-circle"></i> <strong>PROFIL Mahasiwa<strong></td>
+                        <td colspan="2"><i class="fas fa-user-circle"></i> <strong>Profil Admin<strong></td>
                       </tr>                 
                       <tr>
                         <td width="20%"><strong>Nama<strong></td>
-                        <td width="80%">Salnan Ratih A.</td>
+                        <td width="80%"><?php echo $nama; ?></td>
                       </tr>                
                       <tr>
                         <td width="20%"><strong>Email<strong></td>
-                        <td width="80%">salnanratih@gmail.com</td>
+                        <td width="80%"><?php echo $email; ?></td>
                       </tr> 
                       <!--<tr>
                         <td><strong>Foto<strong></td>

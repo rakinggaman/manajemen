@@ -4,9 +4,6 @@
 	if(isset($_SESSION['kode_domisili'])){
 	$kode_domisili = $_SESSION['kode_domisili'];
     $domisili = $_POST['domisili'];
-
-    echo $kode_domisili;
-    echo $domisili;
     
     if(empty($domisili)){ header("Location:edit_domisili.php?data=".$kode_domisili." &notif=editkosong");
         }else{

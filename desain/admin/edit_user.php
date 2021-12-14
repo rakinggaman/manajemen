@@ -1,3 +1,23 @@
+<?php
+	session_start();
+	include('../koneksi/koneksi.php');
+	if(isset($_GET['data'])){
+    $id_user= $_GET['data'];
+    $_SESSION['id_user'] = $id_user;
+
+    //get data user
+    $sql_d = "select `nama`, `email`, `username`, `password`, `level` from `akun` where `id_user` = '$id_user'";
+    $query_d = mysqli_query($koneksi, $sql_d); while($data_d = mysqli_fetch_row($query_d)){
+      $nama= $data_d[0];
+      $email= $data_d[1];
+      $username= $data_d[2];
+      $password= $data_d[3];
+      $level= $data_d[4];
+    }
+  }
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,12 +59,21 @@
         </div>
       </div>
       <!-- /.card-header -->
+      </br>
+      <div class="col-sm-10">
+      <?php if(!empty($_GET['notif'])){?>
+      	<?php if($_GET['notif']=="editkosong"){?>
+      	<div class="alert alert-danger" role="alert">
+	      Maaf data admin wajib di isi</div> 
+        <?php }?>
+       <?php }?>
+    </div>
       <!-- form start -->
       </br>
       <div class="col-sm-10">
           <div class="alert alert-danger" role="alert">Maaf data nama wajib di isi</div>
       </div>
-      <form class="form-horizontal" action="konfirmasi_edit_profil.php" method="POST">
+      <form class="form-horizontal" action="konfirmasi_edit_user.php" method="POST">
       <div class="card-body">
           <div class="form-group row">
             <label for="foto" class="col-sm-12 col-form-label"><span class="text-info"><i class="fas fa-user-circle"></i> <u>Data User</u></span></label>
@@ -52,31 +81,31 @@
           <div class="form-group row">
             <label for="nama" class="col-sm-3 col-form-label">Nama</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" name="nama" id="nama" value="">
+              <input type="text" class="form-control" name="nama" id="nama" value="<?= $nama; ?>">
             </div>
           </div>
           <div class="form-group row">
             <label for="email" class="col-sm-3 col-form-label">Email</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" name="email" id="email" value="">
+              <input type="text" class="form-control" name="email" id="email" value="<?= $email;?>">
             </div>
           </div>
           <div class="form-group row">
             <label for="username" class="col-sm-3 col-form-label">Username</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" name="username" id="username" value="">
+              <input type="text" class="form-control" name="username" id="username" value=" <?= $username;?>">
             </div>
           </div>
           <div class="form-group row">
             <label for="password" class="col-sm-3 col-form-label">Password</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" name="password" id="password" value="">
+              <input type="password" class="form-control" name="password" id="password" value="<?= $password;?>">
             </div>
           </div>
           <div class="form-group row">
             <label for="level" class="col-sm-3 col-form-label">Level</label>
             <div class="col-sm-7">
-              <select class="form-control" id="jurusan">
+              <select class="form-control" id="level" name="level">
                 <option value="superadmin">superadmin</option>
                 <option value="admin">admin</option>
               </select>

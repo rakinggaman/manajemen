@@ -2,13 +2,16 @@
 	session_start();
 	include('../koneksi/koneksi.php');
 	if(isset($_GET['data'])){
-	$kode_domisili = $_GET['data'];
-  $_SESSION['kode_domisili']=$kode_domisili;
+	$kode_artikel = $_GET['data'];
+    $_SESSION['kode_artikel']=$kode_artikel;
 
-//get data domisili
-  $sql_d = "select `domisili` from `domisili` where `kode_domisili` = '$kode_domisili'";
+//get data artikel
+  $sql_d = "select `judul`, `gambar` , `artikel`  from `artikel` where `kode_artikel` = '$kode_artikel'";
   $query_d = mysqli_query($koneksi,$sql_d); while($data_d = mysqli_fetch_row($query_d)){
-    $domisili= $data_d[0];
+  $judul= $data_d[0];
+  $gambar= $data_d[1];
+  $artikel= $data_d[2];
+
   }
 }
 ?>
@@ -32,12 +35,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h3><i class="fas fa-edit"></i> Edit Domisili</h3>
+            <h3><i class="fas fa-edit"></i> Edit Artikel</h3>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="domisili.php">Domisili</a></li>
-              <li class="breadcrumb-item active">Edit Domisili</li>
+              <li class="breadcrumb-item"><a href="artikel.php">Artikel</a></li>
+              <li class="breadcrumb-item active">Edit Artikel</li>
             </ol>
           </div>
         </div>
@@ -49,9 +52,9 @@
 
     <div class="card card-info">
       <div class="card-header">
-        <h3 class="card-title"style="margin-top:5px;"><i class="far fa-list-alt"></i> Form Edit Domisili</h3>
+        <h3 class="card-title"style="margin-top:5px;"><i class="far fa-list-alt"></i> Form Edit Artikel</h3>
         <div class="card-tools">
-          <a href="domisili.php" class="btn btn-sm btn-warning float-right"><i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
+          <a href="artikel.php" class="btn btn-sm btn-warning float-right"><i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
         </div>
       </div>
       <!-- /.card-header -->
@@ -61,18 +64,30 @@
           <?php if(!empty($_GET['notif'])){?>
 	      <?php if($_GET['notif']=="editkosong"){?>
 	    <div class="alert alert-danger" role="alert">
-	        Maaf data domisili wajib di isi</div> 
+	        Maaf data artikel wajib di isi</div> 
           <?php }?>
       <?php }?>
 
       
        </div>
-      <form class="form-horizontal" action="konfirmasi_edit_domisili.php" method="post">
+      <form class="form-horizontal" action="konfirmasi_edit_artikel.php" method="post">
         <div class="card-body">
           <div class="form-group row">
-            <label for="domisili" class="col-sm-3 col-form-label">Domisili</label>
+            <label for="judul" class="col-sm-3 col-form-label">Judul</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" id="domisili" name="domisili" value="<?php echo $domisili;?>">
+              <input type="text" class="form-control" id="judul" name="judul" value="<?php echo $judul;?>">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="gambar" class="col-sm-3 col-form-label">Gambar</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control" id="gambar" name="gambar" value="<?php echo $gambar;?>">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="artikel" class="col-sm-3 col-form-label">Artikel</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control" id="artikel" name="artikel" value="<?php echo $artikel;?>">
             </div>
           </div>
         </div>

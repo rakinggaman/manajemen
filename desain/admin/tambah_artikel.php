@@ -16,12 +16,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h3><i class="fas fa-plus"></i> Tambah Admin</h3>
+            <h3><i class="fas fa-plus"></i> Tambah Artikel</h3>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="akun.php">Admin</a></li>
-              <li class="breadcrumb-item active">Tambah Admin</li>
+              <li class="breadcrumb-item"><a href="artikel.php">Artikel</a></li>
+              <li class="breadcrumb-item active">Tambah Artikel</li>
             </ol>
           </div>
         </div>
@@ -33,9 +33,10 @@
 
     <div class="card card-info">
       <div class="card-header">
-        <h3 class="card-title"style="margin-top:5px;"><i class="far fa-list-alt"></i> Form Tambah Admin</h3>
+        <h3 class="card-title"style="margin-top:5px;"><i class="far fa-list-alt"></i> Form Tambah Artikel
+    </h3>
         <div class="card-tools">
-          <a href="user.php" class="btn btn-sm btn-warning float-right"><i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
+          <a href="artikel.php" class="btn btn-sm btn-warning float-right"><i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
         </div>
       </div>
       <!-- /.card-header -->
@@ -45,45 +46,30 @@
       <?php if(!empty($_GET['notif'])){?>
       	<?php if($_GET['notif']=="tambahkosong"){?>
       	<div class="alert alert-danger" role="alert">
-	      Maaf data admin wajib di isi</div> 
+	      Maaf data artikel wajib di isi</div> 
         <?php }?>
        <?php }?>
     </div>
 
     	<!-- form start -->
-      <form class="form-horizontal" method="post" action="konfirmasi_tambah_user.php">
+      <form class="form-horizontal" method="post" 3.	action="konfirmasi_tambah_artikel.php">
         <div class="card-body">
           <div class="form-group row">
-            <label for="nama" class="col-sm-3 col-form-label">Nama</label>
+            <label for="judul" class="col-sm-3 col-form-label">Judul</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" id="nama" name= "nama" value="">
+              <input type="text" class="form-control" id="judul" name= "judul" value="">
             </div>
           </div>
           <div class="form-group row">
-            <label for="email" class="col-sm-3 col-form-label">Email</label>
+            <label for="gambar" class="col-sm-3 col-form-label">Gambar</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" id="email" name= "email" value="">
+              <input type="text" class="form-control" id="gambar" name= "gambar" value="">
             </div>
           </div>
           <div class="form-group row">
-            <label for="username" class="col-sm-3 col-form-label">Username</label>
+            <label for="artikel" class="col-sm-3 col-form-label">Artikel</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" id="username" name= "username" value="">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="password" class="col-sm-3 col-form-label">Password</label>
-            <div class="col-sm-7">
-              <input type="text" class="form-control" id="password" name= "password" value="">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="level" class="col-sm-3 col-form-label">Level</label>
-            <div class="col-sm-7">
-              <select class="form-control" id="level" name="level">
-                <option value="superadmin">superadmin</option>
-                <option value="admin">admin</option>
-              </select>
+              <input type="text" class="form-control" id="artikel" name= "artikel" value="">
             </div>
           </div>
         </div>

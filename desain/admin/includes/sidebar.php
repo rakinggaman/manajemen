@@ -21,38 +21,14 @@
               </p>
             </a>
           </li>
-           <!-- <li class="nav-item">
-            <a href="mahasiswa.php" class="nav-link">
-              <i class="nav-icon fas fa-user-tie"></i>
-              <p>
-                Industry Type
-              </p>
-            </a>
-          </li> 
           <li class="nav-item">
-            <a href="mahasiswa.php" class="nav-link">
-              <i class="nav-icon fas fa-user-tie"></i>
+            <a href="profil.php" class="nav-link">
+              <i class="nav-icon fas fa-bicycle  "></i>
               <p>
-                City
-              </p>
-            </a>
-          </li> 
-          <li class="nav-item">
-            <a href="mahasiswa.php" class="nav-link">
-              <i class="nav-icon fas fa-user-tie"></i>
-              <p>
-                Status Project
+                Profil
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="jurusan.php" class="nav-link">
-              <i class="nav-icon fas fa-address-card"></i>
-              <p>
-                Data Project
-              </p>
-            </a>
-          </li> -->
           <li class="nav-item">
             <a href="produk.php" class="nav-link">
               <i class="nav-icon fas fa-bicycle  "></i>
@@ -74,6 +50,21 @@
               <i class="nav-icon fas fa-bicycle  "></i>
               <p>
                 Domisili
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="status.php" class="nav-link">
+              <i class="nav-icon fas fa-bicycle  "></i>
+              <p>
+               Status              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="projek.php" class="nav-link">
+              <i class="nav-icon fas fa-bicycle  "></i>
+              <p>
+               Daftar Projek
               </p>
             </a>
           </li>

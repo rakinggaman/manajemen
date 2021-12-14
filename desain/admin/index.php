@@ -20,9 +20,7 @@
     <?php } else {?>
    <span class="text-danger"> Maaf Username dan Password Anda Salah </span>
     <?php }?>
-<?php }?>
-
-
+  <?php }?>
       <form action="konfirmasi_login.php" method="post">
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Username" name="username">
