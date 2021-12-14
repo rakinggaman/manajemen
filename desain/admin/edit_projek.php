@@ -11,9 +11,9 @@
 	$query_m = mysqli_query($koneksi,$sql_m);
 	while($data_m = mysqli_fetch_row($query_m)){
     $kode_projek= $data_m[0];  
-	$pelanggan= $data_m[1];
-	$kode_domisili = $data_m[2];
-	$kode_industri = $data_m[3];
+    $pelanggan= $data_m[1];
+    $kode_domisili = $data_m[2];
+    $kode_industri = $data_m[3];
     $kode_produk = $data_m[4];
     $instagram = $data_m[5];
     $facebook = $data_m[6];
@@ -22,12 +22,8 @@
     $kode_status = $data_m[9];
     $harga = $data_m[10];
 	}
-    
-	
  }
  ?>
-
-
 
 <!DOCTYPE html>
 <html>
@@ -75,7 +71,7 @@
       <div class="col-sm-10">
           <div class="alert alert-danger" role="alert">Maaf data projek wajib di isi</div>
       </div>
-      <form class="form-horizontal" method="post" action="konfirmasi_tambah_projek.php">
+      <form class="form-horizontal" method="post" action="konfirmasi_edit_projek.php">
           <div class="card-body">
             <div class="form-group row">
                 <label for="foto" class="col-sm-12 col-form-label"><span class="text-info"><i class="fas fa-user-circle"></i> <u>Data Projek</u></span></label>

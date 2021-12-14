@@ -9,9 +9,9 @@
         $password = $_POST['password'];
         $level = $_POST['level'];
 
-        // if(empty($id_user)){ 
-        //     header("Location:edit_user.php?data=".$id_user." &notif=editkosong");
-        }if(empty($nama)){
+        if(empty($id_user)){ 
+            header("Location:edit_user.php?data=".$id_user." &notif=editkosong");
+        } else if(empty($nama)){
             header("Location:edit_user.php?include=edit_user&data=".$nama."&notif=editkosong&jenis=nama");
         }else if(empty($email)){
             header("Location:edit_user.php?include=edit_user&data=".$email."&notif=editkosong&jenis=email");
