@@ -20,10 +20,10 @@
     $kode_produk = $data_m[4];
     $instagram = $data_m[5];
     $facebook = $data_m[6];
-    $nama_perwakilan = $data_m[7];
-    $wa_perwakilan = $data_m[8];
-    $kode_status = $data_m[9];
-    $harga = $data_m[10];
+    // $nama_perwakilan = $data_m[7];
+    // $wa_perwakilan = $data_m[8];
+    // $kode_status = $data_m[9];
+    // $harga = $data_m[10];
 	}
  }
  ?>
@@ -82,7 +82,7 @@
             <div class="form-group row">
                 <label for="pelanggan" class="col-sm-3 col-form-label">Pelanggan</label>
                 <div class="col-sm-7">
-                    <input type="text" class="form-control" name="pelanggan" id="pelanggan" value="<?php if(!empty($_SESSION['pelanggan'])){echo $_SESSION['pelanggan'];} ?>">
+                    <input type="text" class="form-control" name="pelanggan" id="pelanggan" value="<?= $pelanggan ?>">
                 </div>
             </div>
             <div class="form-group row">
@@ -168,14 +168,14 @@
             <div class="form-group row">
                 <label for="instagram" class="col-sm-3 col-form-label">Instagram</label>
                 <div class="col-sm-7">
-                    <input type="text" class="form-control" name="instagram" id="instagram" value="<?php if(!empty($_SESSION['instagram'])){echo $_SESSION['instagram'];} ?>">
+                    <input type="text" class="form-control" name="instagram" id="instagram" value="<?= $instagram ?>">
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="facebook" class="col-sm-3 col-form-label">Facebook</label>
                 <div class="col-sm-7">
-                    <input type="text" class="form-control" name="facebook" id="facebook" value="<?php if(!empty($_SESSION['facebook'])){echo $_SESSION['facebook'];} ?>">
+                    <input type="text" class="form-control" name="facebook" id="facebook" value="<?= $facebook ?>">
                 </div>
             </div>
 

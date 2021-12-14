@@ -52,8 +52,8 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
                 <div class="col-sm-12">
                 	<?php if(!empty($_GET['notif'])){?>
                   <?php if($_GET['notif']=="tambahberhasil"){?>
-<div class="alert alert-success" role="alert"> Data Berhasil Ditambahkan</div>
-<?php }?> <?php }?>
+                  <div class="alert alert-success" role="alert"> Data Berhasil Ditambahkan</div>
+                  <?php }?> <?php }?>
 
                 </div>
                 <table class="table table-bordered">
@@ -95,7 +95,7 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
                       <td><?php echo $industri;?></td>
                       <td><?php echo $produk;?></td>
                       <td align="center">
-                      <a href="edit_projek.php?data=<?php echo $pelanggan;?>"
+                      <a href="edit_projek.php?data=<?php echo $id;?>"
                       class="btn btn-xs btn-info" title="Edit">
                       <i class="fas fa-edit"></i></a>
                       <a href="javascript:if(confirm('Anda yakin ingin menghapus data 
