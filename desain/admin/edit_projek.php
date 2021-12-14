@@ -6,8 +6,11 @@
 	$_SESSION['kode_projek']=$kode_projek;
 
 	//get data projek
-	$sql_m = "select `pelanggan`, `kode_domisili`, `kode_industri`, `kode_produk`, `instagram`, `facebook`, `nama_perwakilan`, `wa_perwakilan`, `kode_status`, `harga`
-	from `projek` where `kode_projek` = '$kode_projek'";
+	$sql_m = "SELECT kp.kode_projek, kp.pelanggan, kd.domisili, ki.industri, pp.produk, kp.instagram, kp.facebook
+  FROM projek kp INNER JOIN domisili kd ON kp.kode_domisili = kd.kode_domisili
+  INNER JOIN industri ki ON kp.kode_industri = ki.kode_industri
+  INNER JOIN produk pp ON kp.kode_produk = pp.kode_produk
+  WHERE `kode_projek` = '$kode_projek'";
 	$query_m = mysqli_query($koneksi,$sql_m);
 	while($data_m = mysqli_fetch_row($query_m)){
     $kode_projek= $data_m[0];  
