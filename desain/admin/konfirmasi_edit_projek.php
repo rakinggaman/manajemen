@@ -2,17 +2,17 @@
 session_start();
 include('../koneksi/koneksi.php');
 if (isset($_SESSION['kode_projek'])) {
-  $kode_projek = $_SESSION[0];
-  $pelanggan = $_POST[1];
-  $kode_domisili = $_POST[2];
-  $kode_industri = $_POST[3];
-  $kode_produk = $_POST[4];
-  $instagram = $_POST[5];
-  $facebook = $_POST[6];
-  $nama_perwakilan = $_POST[7];
-  $wa_perwakilan = $_POST[8];
-  $kode_status = $_POST[9];
-  $harga = $_POST[10];
+  $kode_projek = $_SESSION['kode_projek'];
+  $pelanggan = $_POST['pelanggan'];
+  $kode_domisili = $_POST['domisili'];
+  $kode_industri = $_POST['industri'];
+  $kode_produk = $_POST['produk'];
+  $instagram = $_POST['instagram'];
+  $facebook = $_POST['facebook'];
+  $nama_perwakilan = $_POST['nama-perwakilan'];
+  $wa_perwakilan = $_POST['wa'];
+  $kode_status = $_POST['status'];
+  $harga = $_POST['harga'];
 
   if (empty($kode_projek)) {
     header("Location:edit_project.php?data=" . $kode_projek . "&notif=editkosong");
