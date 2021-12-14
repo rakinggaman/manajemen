@@ -6,7 +6,7 @@
 	$_SESSION['kode_projek']=$kode_projek;
 
 	//get data projek
-	$sql_m = "SELECT kp.kode_projek, kp.pelanggan, kd.domisili, ki.industri, pp.produk, kp.instagram, kp.facebook
+	$sql_m = "SELECT kp.kode_projek, kp.pelanggan, kd.domisili, ki.industri, pp.produk, kp.instagram, kp.facebook, kp.nama_perwakilan, kp.wa_perwakilan, kp.harga_projek
   FROM projek kp INNER JOIN domisili kd ON kp.kode_domisili = kd.kode_domisili
   INNER JOIN industri ki ON kp.kode_industri = ki.kode_industri
   INNER JOIN produk pp ON kp.kode_produk = pp.kode_produk
@@ -20,10 +20,11 @@
     $kode_produk = $data_m[4];
     $instagram = $data_m[5];
     $facebook = $data_m[6];
-    // $nama_perwakilan = $data_m[7];
-    // $wa_perwakilan = $data_m[8];
-    // $kode_status = $data_m[9];
-    // $harga = $data_m[10];
+    echo var_dump($data_m);
+    $nama_perwakilan = $data_m[7];
+    $wa_perwakilan = $data_m[8];
+    $kode_status = $data_m[9];
+    $harga = $data_m[10];
 	}
  }
  ?>
@@ -182,14 +183,14 @@
             <div class="form-group row">
                 <label for="nama" class="col-sm-3 col-form-label">Nama Perwakilan</label>
                 <div class="col-sm-7">
-                    <input type="text" class="form-control" name="nama" id="nama" value="<?php if(!empty($_SESSION['nama_perwakilan'])){echo $_SESSION['nama_perwakilan'];} ?>">
+                    <input type="text" class="form-control" name="nama-perwakilan" id="nama-perwakilan" value="<?= $nama_perwakilan ?>">
                 </div>
             </div>
 
           <div class="form-group row">
             <label for="wa" class="col-sm-3 col-form-label">WA perwakilan</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" name="wa" id="wa" value="<?php if(!empty($_SESSION['wa_perwakilan'])){echo $_SESSION['wa_perwakilan'];} ?>">
+              <input type="text" class="form-control" name="wa" id="wa" value="<?= $wa_perwakilan ?>">
             </div>
           </div>
           <div class="form-group row">
@@ -217,7 +218,7 @@
             <div class="form-group row">
                 <label for="harga" class="col-sm-3 col-form-label">Harga</label>
                 <div class="col-sm-7">
-                    <input type="text" class="form-control" name="harga" id="harga" value="<?php if(!empty($_SESSION['harga'])){echo $_SESSION['harga'];} ?>">
+                    <input type="text" class="form-control" name="harga" id="harga" value="<?= $harga_projek ?>">
                 </div>
             </div>
         </div>
