@@ -6,10 +6,11 @@
 	$_SESSION['kode_projek']=$kode_projek;
 
 	//get data projek
-	$sql_m = "SELECT kp.kode_projek, kp.pelanggan, kd.domisili, ki.industri, pp.produk, kp.instagram, kp.facebook
+	$sql_m = "SELECT kp.kode_projek, kp.pelanggan, kd.domisili, ki.industri, pp.produk, kp.instagram, kp.facebook, kp.nama_perwakilan, kp.wa_perwakilan, ks.kode_status ,kp.harga_projek
   FROM projek kp INNER JOIN domisili kd ON kp.kode_domisili = kd.kode_domisili
   INNER JOIN industri ki ON kp.kode_industri = ki.kode_industri
   INNER JOIN produk pp ON kp.kode_produk = pp.kode_produk
+  INNER JOIN status ks ON kp.kode_status = ks.kode_status
   WHERE `kode_projek` = '$kode_projek'";
 	$query_m = mysqli_query($koneksi,$sql_m);
 	while($data_m = mysqli_fetch_row($query_m)){
@@ -82,7 +83,7 @@
             <div class="form-group row">
                 <label for="pelanggan" class="col-sm-3 col-form-label">Pelanggan</label>
                 <div class="col-sm-7">
-                    <input type="text" class="form-control" name="pelanggan" id="pelanggan" value="<?php if(!empty($_SESSION['pelanggan'])){echo $_SESSION['pelanggan'];} ?>">
+                    <input type="text" class="form-control" name="pelanggan" id="pelanggan" value="<?= $pelanggan ?>">
                 </div>
             </div>
             <div class="form-group row">
@@ -168,28 +169,28 @@
             <div class="form-group row">
                 <label for="instagram" class="col-sm-3 col-form-label">Instagram</label>
                 <div class="col-sm-7">
-                    <input type="text" class="form-control" name="instagram" id="instagram" value="<?php if(!empty($_SESSION['instagram'])){echo $_SESSION['instagram'];} ?>">
+                    <input type="text" class="form-control" name="instagram" id="instagram" value="<?= $instagram ?>">
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="facebook" class="col-sm-3 col-form-label">Facebook</label>
                 <div class="col-sm-7">
-                    <input type="text" class="form-control" name="facebook" id="facebook" value="<?php if(!empty($_SESSION['facebook'])){echo $_SESSION['facebook'];} ?>">
+                    <input type="text" class="form-control" name="facebook" id="facebook" value="<?= $facebook ?>">
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="nama" class="col-sm-3 col-form-label">Nama Perwakilan</label>
                 <div class="col-sm-7">
-                    <input type="text" class="form-control" name="nama" id="nama" value="<?php if(!empty($_SESSION['nama_perwakilan'])){echo $_SESSION['nama_perwakilan'];} ?>">
+                    <input type="text" class="form-control" name="nama-perwakilan" id="nama-perwakilan" value="<?= $nama_perwakilan ?>">
                 </div>
             </div>
 
           <div class="form-group row">
             <label for="wa" class="col-sm-3 col-form-label">WA perwakilan</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" name="wa" id="wa" value="<?php if(!empty($_SESSION['wa_perwakilan'])){echo $_SESSION['wa_perwakilan'];} ?>">
+              <input type="text" class="form-control" name="wa" id="wa" value="<?= $wa_perwakilan ?>">
             </div>
           </div>
           <div class="form-group row">
@@ -217,7 +218,7 @@
             <div class="form-group row">
                 <label for="harga" class="col-sm-3 col-form-label">Harga</label>
                 <div class="col-sm-7">
-                    <input type="text" class="form-control" name="harga" id="harga" value="<?php if(!empty($_SESSION['harga'])){echo $_SESSION['harga'];} ?>">
+                    <input type="text" class="form-control" name="harga" id="harga" value="<?= $harga ?>">
                 </div>
             </div>
         </div>
