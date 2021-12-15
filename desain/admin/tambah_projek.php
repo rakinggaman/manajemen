@@ -130,20 +130,8 @@ include('../koneksi/koneksi.php');
                     </select>
                 </div>
             </div>
-                    <?php 
-                        $sql_h = "select `kode_produk`, `produk` from `produk` order by `kode_produk`";
-                        $query_h = mysqli_query($koneksi,$sql_h);
-                        $jum_hobi = mysqli_num_rows($query_h);
-
-                        while($data_h = mysqli_fetch_row($query_h)){
-                            $kode_produk = $data_h[0];
-                            $produk = $data_h[1];
-                        ?>
-                        <input type="checkbox"  name="produk[]" value="<?php echo $kode_produk; ?>"/> 
-                        <?php echo $produk; ?></br>
-                    <?php }?>
-                    </div>
-            </div> -->
+                   
+            
 
             <div class="form-group row">
                 <label for="instagram" class="col-sm-3 col-form-label">Instagram</label>
